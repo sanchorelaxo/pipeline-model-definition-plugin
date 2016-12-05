@@ -1,9 +1,6 @@
 
     // Make sure that the tools we need are installed and on the path.
-    tools {
-        maven "M3"
-        jdk "Java"
-    }
+    def mvnHome = tool 'M3'
 
     // Run on executors with the "docker" label, because it's either that or Windows here.
     agent label:"node"
@@ -15,7 +12,7 @@
     }
     
     stage("build") {
-        bat 'mvn clean install -Dmaven.test.failure.ignore=true'
+        bat '${mvnHome}/bin/mvn clean install -Dmaven.test.failure.ignore=true'
     }
     
     
