@@ -1,6 +1,4 @@
-// This Jenkinsfile's main purpose is to show a real-world-ish example
-// of what Pipeline config syntax actually looks like. 
-pipeline {
+
     // Make sure that the tools we need are installed and on the path.
     tools {
         maven "M3"
@@ -30,5 +28,4 @@ pipeline {
             archive "target/**/*"
             junit 'target/surefire-reports/*.xml'
         }
-    }
 }
