@@ -3,12 +3,12 @@
 pipeline {
     // Make sure that the tools we need are installed and on the path.
     tools {
-        maven "mvn"
-        jdk "jdk8"
+        maven "M3"
+        jdk "Java"
     }
 
     // Run on executors with the "docker" label, because it's either that or Windows here.
-    agent label:"docker"
+    agent label:"node"
 
     // Make sure we have GIT_COMMITTER_NAME and GIT_COMMITTER_EMAIL set due to machine weirdness.
     environment {
